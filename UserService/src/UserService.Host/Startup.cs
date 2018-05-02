@@ -26,7 +26,7 @@ namespace UserService.Host
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<UserContext>(options =>
-                options.UseSqlServer(Configuration["ConnectionString"])
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
             );
             
             services.AddMvc();
