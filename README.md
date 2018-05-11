@@ -21,6 +21,51 @@ Today's latest Ubuntu version that support Docker is Artful 17.10. Since I want 
 
 As just mentioned latest Ubuntu version is [Artful 17.10](http://releases.ubuntu.com/17.10/ubuntu-17.10.1-desktop-amd64.iso)
 
+#### Docker CE
+
+Let's install Docker Community Edition as per [documented](https://docs.docker.com/install/linux/docker-ce/ubuntu/#set-up-the-repository):
+
+```
+sudo apt-get update
+```
+
+```
+sudo apt-get install \
+     apt-transport-https \
+     ca-certificates \
+     curl \
+     software-properties-common
+```
+
+```
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+```
+
+```
+sudo apt-key fingerprint 0EBFCD88
+```
+
+```
+sudo add-apt-repository \
+    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+    $(lsb_release -cs) \
+    stable"
+```
+
+```
+sudo apt-get update
+```
+
+```
+sudo apt-get install docker-ce
+```
+
+```
+sudo usermod -aG docker $USER
+```
+
+Logout and login!
+
 ## Installing docker-compose
 
 ```
