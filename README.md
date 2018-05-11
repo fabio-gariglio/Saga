@@ -52,6 +52,13 @@ sudo usermod -aG docker $USER
 
 Logout and login!
 
+#### Docker Compose
+
+```
+sudo curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+```
+
 #### .NET Core SDK
 
 Latest version of .NET Core SDK is 2.1.3 which is still in preview but that's the one I am going to install as documented [here](https://www.microsoft.com/net/download/linux-package-manager/ubuntu17-10/sdk-2.1.300-rc1).
@@ -65,15 +72,17 @@ sudo apt-get update
 sudo apt-get install dotnet-sdk-2.1.300-rc1-008673
 ```
 
-## Installing docker-compose
+#### Visual Studio Code
 
-```
-sudo curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
-```
+Last but not least I need a great development IDE. I chose [Visual Studio Code](https://code.visualstudio.com/Download) for this job.
+
+In addition to the application I am going to add following extensions:
+* C# for Visual Studio Code (powered by OmniSharp)
+* Docker
+* SQLTools for VSCode
 
 ## Run docker-compose
 
 ```
-/usr/local/bin/docker-compose up
+docker-compose up
 ```
